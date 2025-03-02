@@ -5,11 +5,6 @@ const mysql = require('mysql2');
 const app = express();
 const port = 3000;
 
-console.log('DB_HOST:', process.env.DB_HOST);
-console.log('DB_USER:', process.env.DB_USER);
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
-console.log('DB_NAME:', process.env.DB_NAME);
-
 // Create a connection to the MySQL database
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,       // RDS endpoint
