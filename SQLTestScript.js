@@ -1,13 +1,9 @@
-// Load environment variables from .env file
 require('dotenv').config();
 
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
-const port = 3306;
-
-// Middleware to parse JSON request bodies
-app.use(express.json());
+const port = 3000;
 
 // Create a connection to the MySQL database
 const connection = mysql.createConnection({
@@ -36,25 +32,6 @@ app.get('/api/get-data', (req, res) => {
       return res.status(500).json({ error: 'Database query failed' });
     }
     res.json(results);
-  });
-});
-
-// Endpoint to save data
-app.post('/api/save-data', (req, res) => {
-  const { data } = req.body;
-
-  // Validate the request body
-  if (!data) {
-    return res.status(400).json({ error: 'Data is required' });
-  }
-
-  const query = 'INSERT INTO your_table (column_name) VALUES (?)';
-  connection.query(query, [data], (err, results) => {
-    if (err) {
-      console.error('Failed to save data:', err);
-      return res.status(500).json({ error: 'Failed to save data' });
-    }
-    res.json({ message: 'Data saved successfully', id: results.insertId });
   });
 });
 
