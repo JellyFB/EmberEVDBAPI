@@ -3,7 +3,7 @@ require('dotenv').config({ path: '/home/ec2-user/EmberEVDBAPI/.env' });
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
-const port = 3000;
+const port = 22;
 
 // Create a connection to the MySQL database
 const connection = mysql.createConnection({
