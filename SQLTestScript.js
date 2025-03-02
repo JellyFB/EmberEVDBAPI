@@ -4,17 +4,17 @@ require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
-const port = 3000;
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
 // Create a connection to the MySQL database
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST,       // Database host from .env
-  user: process.env.DB_USER,       // Database user from .env
-  password: process.env.DB_PASSWORD, // Database password from .env
-  database: process.env.DB_NAME,   // Database name from .env
+  host: process.env.DB_HOST,       // RDS endpoint
+  user: process.env.DB_USER,       // Database username
+  password: process.env.DB_PASSWORD, // Database password
+  database: process.env.DB_NAME,   // Database name
+  port: 3306,                     // Default MySQL port
 });
 
 // Test the database connection
