@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({ path: '/home/ec2-user/EmberEVDBAPI/.env' });
 
 const express = require('express');
 const mysql = require('mysql2');
