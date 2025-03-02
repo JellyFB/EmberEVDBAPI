@@ -3,7 +3,7 @@ require('dotenv').config({ path: '/home/ec2-user/EmberEVDBAPI/.env' });
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
-const port = 22;
+const port = 3000;
 
 // Create a connection to the MySQL database
 const connection = mysql.createConnection({
@@ -36,6 +36,6 @@ app.get('/api/get-data', (req, res) => {
 });
 
 // Start the server
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running on http://0.0.0.0:${port}`);
+app.listen(port, '44.200.65.224', () => {
+  console.log(`Server running on http://44.200.65.224:${port}`);
 });
