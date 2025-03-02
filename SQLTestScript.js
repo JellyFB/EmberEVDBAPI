@@ -4,6 +4,7 @@ require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
+const port = 3306;
 
 // Middleware to parse JSON request bodies
 app.use(express.json());
