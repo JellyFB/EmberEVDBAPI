@@ -36,6 +36,6 @@ app.get('/api/get-data', (req, res) => {
 });
 
 // Start the server
-app.listen(port, '44.200.65.224', () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Server running on http://44.200.65.224:${port}`);
 });
