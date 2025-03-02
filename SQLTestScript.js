@@ -15,7 +15,7 @@ const connection = mysql.createConnection({
   host: 'emberevuserdata.c6xw66mqsqpl.us-east-1.rds.amazonaws.com',       // RDS endpoint
   user: 'admin',       // Database username
   password: 'emberEVdata', // Database password
-  database: 'emberevuserdata',   // Database name
+  database: 'EVUserData',   // Database name
   port: 3306,                     // Default MySQL port
 });
 
