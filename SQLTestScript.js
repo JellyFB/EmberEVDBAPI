@@ -39,3 +39,13 @@ app.get('/api/get-data', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
+
+app.get('/api/test-connection', (req, res) => {
+  connection.query('SELECT 1', (err, results) => {
+    if (err) {
+      console.error('Database connection test failed:', err);
+      return res.status(500).json({ error: 'Database connection test failed' });
+    }
+    res.json({ message: 'Database connection successful', results });
+  });
+});
