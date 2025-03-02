@@ -12,10 +12,10 @@ console.log('DB_NAME:', process.env.DB_NAME);
 
 // Create a connection to the MySQL database
 const connection = mysql.createConnection({
-  host: process.env.DB_HOST,       // RDS endpoint
-  user: process.env.DB_USER,       // Database username
-  password: process.env.DB_PASSWORD, // Database password
-  database: process.env.DB_NAME,   // Database name
+  host: 'emberevuserdata.c6xw66mqsqpl.us-east-1.rds.amazonaws.com',       // RDS endpoint
+  user: 'admin',       // Database username
+  password: 'emberEVdata', // Database password
+  database: 'emberevuserdata',   // Database name
   port: 3306,                     // Default MySQL port
 });
 
